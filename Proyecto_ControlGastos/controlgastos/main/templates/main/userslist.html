@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>Lista de usuarios registrados</title>
+    </head>
+    <body>
+        <h1> Lista de todos los usuarios </h1>
+        <table>
+            <tr>
+                <th>Usuario</th>
+                <th>Nombre</th>
+                <th>Correo</th>
+            </tr>
+            {% for pok in user_list %}
+            <tr>
+                <td> <a href="userlist/{{pok.id}}">{{pok.Usuario}} </a></td>
+                <td>{{pok.Nombre}}</td>
+                <td>{{pok.Correo}}</td>
+            </tr>
+            {% endfor %}
+            </table>
+    </body>
+</html>
