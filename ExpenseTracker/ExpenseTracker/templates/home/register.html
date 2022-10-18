@@ -1,0 +1,108 @@
+{% extends 'base1.html' %}
+{% load static %}
+{% block body  %}
+
+<img src="{% static 'img/registro.png' %}" alt="logo" width="100%" height="900">
+
+<div class="bg-text">
+    <body class="bg-primary">
+        <div id="layoutAuthentication">
+            <div id="layoutAuthentication_content">
+                <main>
+                    <div class="container" style="margin-bottom:15px;">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-7">
+                                <div class="card shadow-lg border-0 rounded-lg mt-5">
+                                    <div class="card-header"><h1 class="text-center font-weight-light my-4"> Crear Cuenta </h1></div>
+                                    <div class="card-body">
+                                        <form action="/handleSignup/" method='post'>
+                                        {% csrf_token %} 
+                                            <div class="form-row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="small mb-1" for="uname">Usuario</label>
+                                                        <input class="form-control py-4" id="uname" name="uname" type="text" placeholder="Enter User Name" required/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                             <div class="form-row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="small mb-1" for="inputFirstName">Nombre</label>
+                                                        <input class="form-control py-4" id="fname" name="fname" type="text" placeholder="Enter first name" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="small mb-1" for="inputLastName">Apellido</label>
+                                                        <input class="form-control py-4" id="lname" name="lname" type="text" placeholder="Enter last name" />
+                                                    </div>
+                                                </div>
+                                            </div>   
+                                                
+                                            <div class="form-group">
+                                                <label class="small mb-1" for="inputEmailAddress">Email</label>
+                                                <input class="form-control py-4" id="email" name="email" type="email" aria-describedby="emailHelp" placeholder="Enter email address" required />
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="small mb-1" for="inputprofession">Profession</label>
+                                                
+                                                        <select name="profession" id="profession" style=" width:250px;height: 25px">
+                                                            <option value="Employee">Employee</option>
+                                                            <option value="Business">Business</option>
+                                                            <option value="Student">Student</option>
+                                                            <option value="Other">Other</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="small mb-1" for="inputincome">Ingreso</label>
+                                                        <input class="form-control py-4" id="income" name="income" type="text" placeholder="Income" required/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="small mb-1" for="inputsavings">Ahorros</label>
+                                                        <input class="form-control py-4" id="Savings"  name="Savings" type="text" placeholder="Amount to be saved" required />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="small mb-1" for="inputPassword">Contraseña</label>
+                                                        <input class="form-control py-4" id="pass1" name="pass1" type="password" placeholder="Enter password" required />
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="small mb-1" for="inputConfirmPassword">Confirma Contraseña</label>
+                                                        <input class="form-control py-4" id="pass2" name="pass2" type="password" placeholder="Confirm password" required />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class = "btn">
+                                            <div class="form-group mt-4 mb-0"><button type="submit" class="btn btn-primary btn-block mt-2">Crear Usuario</button></div></div></div>
+                                    <div class="card-footer text-center">
+                                        <div class="small"><a href="/">Tienes una cuenta? Inicia Sesion</a></div>
+                                    </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   
+                </main>
+            </div>
+    </div>
+    </body>
+</html>
+{% endblock body %}
