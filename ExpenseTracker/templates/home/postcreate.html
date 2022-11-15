@@ -1,0 +1,17 @@
+{% extends 'base3.html' %}
+{% block content %}
+
+<h2 class="subtitle">Agregar Post</h2>
+
+<form method="post" action=".">
+    {% csrf_token %}
+
+    {{ post_Form.as_p }}
+
+    <div class="field">
+        <div class="control">
+            <button class="button is-success">Guardar Post</button>
+        </div>
+    </div>
+</form>
+{% endblock %}

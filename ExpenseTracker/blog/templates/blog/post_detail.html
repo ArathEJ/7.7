@@ -1,0 +1,45 @@
+{% extends 'base3.html' %}
+{% block content %}
+	<h1 class="title">{{ post.title }}</h1>
+
+	<small>Publicado el {{ post.date_added }}</small>
+
+	<p><strong>{{ post.intro }}</strong></p>
+
+	<p>{{ post.body }}</p>
+    <hr>
+    <h2 class="subtitle">Comments</h2>
+
+{% for comment in post.comments.all %}
+	<article class="media">
+		<div class="media-content">
+			<div class="content">
+				<p>
+					<strong>{{ comment.name }}</strong> <small>{{ comment.date_added|timesince }} ago</small>
+					<br>
+					{{ comment.body }}
+				</p>
+			</div>
+		</div>
+	</article>
+{% empty %}
+	<div class="notification">
+		Sin comentarios Aun...
+	</div>
+{% endfor %}
+
+<hr>
+	<h2 class="subtitle">Agregar Comentario</h2>
+
+	<form method="post" action=".">
+		{% csrf_token %}
+
+		{{ form.as_p }}
+
+		<div class="field">
+			<div class="control">
+				<button class="button is-success">Publicar</button>
+			</div>
+		</div>
+	</form>
+{% endblock %}

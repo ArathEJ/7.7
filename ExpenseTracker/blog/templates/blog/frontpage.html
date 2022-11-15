@@ -1,0 +1,20 @@
+{% extends 'base3.html' %}
+
+{% block content %}
+	{% for post in posts %}
+
+
+		<div class="header">
+			<h2 class="header">{{ post.title }}</h2>
+
+			<small>Publicado el {{ post.date_added }}</small>
+
+			<p>{{ post.intro }}</p>
+
+			<a href="{% url 'post_detail' post.slug %}">Leer mas </a>
+
+		</div>
+	{% endfor %}
+	<a class="header", href="{% url 'post_create' %}">Crear Articulo</a>
+
+{% endblock %}
